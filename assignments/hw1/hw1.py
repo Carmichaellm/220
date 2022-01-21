@@ -2,7 +2,7 @@
 Name: Liam Carmichael
 hw1.py
 
-Problem: <Brief, one or two sentence description of the problem that this program solves, in your own words.>
+Problem: First homework assignment.
 
 Certification of Authenticity:
 I certify that this assignment is entirely my own work.
