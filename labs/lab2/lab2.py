@@ -15,29 +15,29 @@ import math #needed for squareroot
 
 #inital values
 values_entered = eval(input("enter the values to be entered: "))
-rms = 0
-hrmnc_m = 0
-gmtrc_m = 1 #must start as 1 for multiplication
+rms_acc = 0
+hrmnc_acc = 0
+gmtrc_acc = 1 #must start as 1 for multiplication
 
 #first computations
-for i in range(values_entered): #place repeated math in the body
+for i in range(values_entered): #place repeated math in the accumulator
     value = eval(input("enter value: "))
-    rms = rms + (value**2)
-    hrmnc_m = hrmnc_m + (1/value)
-    gmtrc_m = gmtrc_m * value
+    rms_acc = rms_acc + (value**2)
+    hrmnc_acc = hrmnc_acc + (1/value)
+    gmtrc_acc = gmtrc_acc * value
 
 #second computations
-rms = math.sqrt(rms/values_entered)
-hrmnc_m = (values_entered/hrmnc_m)
-gmtrc_m = gmtrc_m**(1/values_entered)
+rms_acc = math.sqrt(rms_acc/values_entered)
+hrmnc_acc = (values_entered/hrmnc_acc)
+gmtrc_acc = gmtrc_acc**(1/values_entered)
 
 #rounding
-rms = round(rms,3)
-hrmnc_m = round(hrmnc_m,3)
-gmtrc_m = round(gmtrc_m,3)
+rms_acc = round(rms_acc,3)
+hrmnc_acc = round(hrmnc_acc,3)
+gmtrc_acc= round(gmtrc_acc,3)
 
 #print final values
-print("RMS Average:", rms)
-print("Harmonic Mean:", hrmnc_m)
-print("Geometric Mean:", gmtrc_m)
+print("RMS Average:", rms_acc)
+print("Harmonic Mean:", hrmnc_acc)
+print("Geometric Mean:", gmtrc_acc)
 
