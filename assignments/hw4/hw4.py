@@ -1,16 +1,14 @@
 """
-Name: <your name goes here – first and last>
-<ProgramName>.py
+Name: Liam Carmichael
+hw4.py
 
-Problem: <Brief, one or two sentence description of the problem that this program solves, in your own words.>
+Problem: Practice accumulating sequences.
 
 Certification of Authenticity:
-<include one of the following>
 I certify that this assignment is entirely my own work.
-I certify that this assignment is my own work, but I discussed it with: <Name(s)>
 """
 
-from graphics import *
+from graphics import Rectangle, GraphWin, Point, Text, Circle
 
 
 def squares():
@@ -28,7 +26,7 @@ def squares():
     instructions.draw(win)
 
     # builds a circle
-    shape = Circle(Point(50, 50), 20)
+    shape = Rectangle(Point(0,0),Point(50,50))
     shape.setOutline("red")
     shape.setFill("red")
     shape.draw(win)
@@ -43,13 +41,41 @@ def squares():
         change_x = click.getX() - center.getX()
         change_y = click.getY() - center.getY()
         shape.move(change_x, change_y)
+        # shape2 = shape.clone(win)
+        # shape2.draw(win)
 
     win.getMouse()
     win.close()
 
 
 def rectangle():
-    pass
+    width = 600
+    height = 600
+    win = GraphWin("Rectangle",width, height)
+    message = Text(Point((width/2),(height/2)),"click to draw a square")
+    message.draw(win)
+
+    click_1 = win.getMouse()
+    point_1 = Point(click_1.getX(), click_1.getY())
+    click_2 = win.getMouse()
+    point_2 = Point(click_2.getX(), click_2.getY())
+    shape = Rectangle(point_1,point_2)
+    shape.setFill("green")
+
+    side_x = abs(click_1.getX() - click_2.getX())
+    side_y = abs(click_1.getY() - click_2.getY())
+
+    perimeter = (side_x * 2) + (side_y * 2)
+    area = side_x * side_y
+
+    perimeter_msg = Text(Point((width/2),(height-50)),"Perimeter:")
+    perimeter_msg.setText("Perimeter:",perimeter)
+    #area_msg =
+
+    message.setText("click again to close")
+    shape.draw(win)
+    win.getMouse()
+    win.close()
 
 
 def circle():
@@ -57,7 +83,7 @@ def circle():
 
 
 def pi2():
-    pass
+    pass #what does approximating pi mean?
 
 
 if __name__ == '__main__':
