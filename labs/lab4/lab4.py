@@ -1,3 +1,14 @@
+"""
+Name: Liam Carmichael
+lab4.py
+
+Problem: displays a valentine's day message
+
+Certification of Authenticity:
+I certify that this assignment is entirely my own work.
+"""
+import time
+
 from graphics import GraphWin, Point, Circle, Polygon, Text, Line
 from time import sleep
 
@@ -61,6 +72,7 @@ def greeting_card():
 
     #annimation
     for i in range(300):
+        time.sleep(0.01)
         spine.move(-1,1)
         bullet.move(-1,1)
         fletch.move(-1,1)
