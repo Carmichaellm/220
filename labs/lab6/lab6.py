@@ -54,3 +54,5 @@ def vigenere():
     rect_button.setWidth(0)
     win.getMouse()
     win.close()
+
+vigenere()
