@@ -1,18 +1,19 @@
 """
-Name: <your name goes here – first and last>
-<ProgramName>.py
+Name: Liam Carmichael
+hw7.py
 
-Problem: <Brief, one or two sentence description of the problem that this program solves, in your own words.>
+Problem: reading and writing text files
 
 Certification of Authenticity:
-<include one of the following>
 I certify that this assignment is entirely my own work.
-I certify that this assignment is my own work, but I discussed it with: <Name(s)>
 """
 
 
 def number_words(in_file_name, out_file_name):
-    pass
+    order = 0
+    for i in in_file_name:
+        order = order + 1
+        print(order, i)
 
 
 def hourly_wages(in_file_name, out_file_name):
