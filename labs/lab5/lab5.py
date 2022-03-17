@@ -17,6 +17,7 @@ def triange():
     win = GraphWin("Triangle", width, height)
     message = Text(Point((width / 2), (height / 2)), "click to draw a triangle")
     message.draw(win)
+    win.getw
 
     click_1 = win.getMouse()
     point_1 = Point(click_1.getX(), click_1.getY())
