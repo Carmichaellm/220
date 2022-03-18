@@ -1,42 +1,69 @@
 """
-Name: <your name goes here – first and last>
-<ProgramName>.py
+Name: Liam Carmichael
+hw8.py
 
-Problem: <Brief, one or two sentence description of the problem that this program solves, in your own words.>
+Problem:
 
 Certification of Authenticity:
 <include one of the following>
 I certify that this assignment is entirely my own work.
-I certify that this assignment is my own work, but I discussed it with: <Name(s)>
 """
 
 
 def add_ten(nums):
-    pass
+    for i in range(len(nums)):
+        nums[i] = nums[i] + 10
 
 
 def square_each(nums):
-    pass
+    for i in range(len(nums)):
+        if type(nums[i]) == type(1):
+            nums[i] = nums[i] * nums[i]
+            nums[i] = int(nums[i])
+        if type(nums[i]) == type(1.0):
+            nums[i] = nums[i] * nums[i]
+            nums[i] = float(nums[i])
+
 
 
 def sum_list(nums):
-    pass
+    acc = 0
+    for i in range(len(nums)):
+        acc = acc + nums[i]
+    return acc
+
 
 
 def to_numbers(nums):
-    pass
+    for i in range(len(nums)):
+        nums[i] = float(nums[i])
 
 
-def sum_of_squares(nums):
-    pass
+def sum_of_squares(nums): #output matches expected but test claims its wrong
+    for i in range(len(nums)):
+        split = nums[i].split(',')
+        acc = 0
+        for j in range(len(split)):
+            split[j] = float(split[j])
+            split[j] = split[j] * split[j]
+            acc = acc + split[j]
+        nums[i] = acc
 
 
 def starter(weight, wins):
-    pass
+    if ((weight >= 150) and (weight < 160)) and (wins >= 5):
+        return True
+    if (weight > 199) or (wins > 19):
+        return True
+    return False
 
 
 def leap_year(year):
-    pass
+    if (year % 4 == 0) and not (year % 100 == 0):
+        return True
+    if (year % 400 == 0):
+        return True
+    return False
 
 
 def circle_overlap():
