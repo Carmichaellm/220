@@ -5,7 +5,7 @@ Name: <your name goes here – first and last>
 
 
 def build_board():
-    pass
+    coords = [1,2,3,4,5,6,7,8,9]
 
 
 def print_board(board):
@@ -37,31 +37,87 @@ def print_board(board):
 
 
 def is_legal(board, position):
-    pass
+    if not ((board[position] == 'x') or (board[position] == 'o')):
+        return True
+    return False
 
 
 def fill_spot(board, position, character):
-    pass
+    character = character.strip()
+    character = character.lower()
+    board[position] = character
 
 
-def winning_game(board):
-    pass
+def winning_game(board, shape):
+    if board[0] == shape and board[1] == shape and board[2] == shape:
+        return True
+    if board[0] == shape and board[4] == shape and board[8] == shape:
+        return True
+    if board[0] == shape and board[3] == shape and board[6] == shape:
+        return True
+    if board[1] == shape and board[4] == shape and board[7] == shape:
+        return True
+    if board[2] == shape and board[4] == shape and board[6] == shape:
+        return True
+    if board[2] == shape and board[5] == shape and board[8] == shape:
+        return True
+    if board[3] == shape and board[4] == shape and board[5] == shape:
+        return True
+    if board[6] == shape and board[7] == shape and board[8] == shape:
+        return True
+    return False
 
 
 def game_over(board):
-    pass
+    for i in range(len(board)):
+        if type(board[i]) == type(0):
+            return False
+    return True
 
 
 def get_winner(board):
-    pass
+    winner = ''
+    if winning_game(board, 'x'):
+        winner = 'x'
+        return winner
+    if winning_game(board,'o'):
+        winner = 'o'
+        return winner
+    return None
 
 
 def play(board):
-    pass
+    end = False
+    while not end:
+        print_board(board)
+        xmoved = False
+        while xmoved == False:
+            position = eval(input("x's choose a position: "))
+            if is_legal(board, position):
+                fill_spot(board,position,'x')
+                xmoved = True
+        omoved = False
+        while omoved == False:
+            position = eval(input("o's choose a position: "))
+            if is_legal(board, position):
+                fill_spot(board, position, 'o')
+                omoved = True
+        winner = get_winner(board)
+        if winning_game(board, winner):
+            print("{}'s win!".format(winner))
+            end = True
+        if game_over(board):
+            end = True
+
+
 
 
 def main():
-    pass
+    ans = 'y'
+    while ans[0] == 'y':
+        board = build_board()
+        play(board)
+        ans = input('play again?')
 
 
 if __name__ == '__main__':
