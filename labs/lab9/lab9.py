@@ -1,6 +1,6 @@
 """
-Name: <your name goes here – first and last>
-<ProgramName>.py
+Name: Liam Carmichael
+lab9.py
 """
 
 
