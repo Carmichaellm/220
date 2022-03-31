@@ -20,12 +20,12 @@ class Button:
         self.label.undraw()
 
     def is_clicked(self, point):
-        x1 = self.shape.getP1().getX
-        y1 = self.shape.getP1().getY
-        x2 = self.shape.getP1().getX
-        y2 = self.shape.getP1().getY
-        xp = point.getX
-        yp = point.getX
+        x1 = self.shape.getP1().getX()
+        y1 = self.shape.getP1().getY()
+        x2 = self.shape.getP1().getX()
+        y2 = self.shape.getP1().getY()
+        xp = point.getX()
+        yp = point.getX()
         if (x1 <= xp <= x2) and (y1 <= yp <= y2):
             return True
         if (x2 <= xp <= x1) and (y2 <= yp <= y1):
