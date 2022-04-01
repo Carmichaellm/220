@@ -50,7 +50,22 @@ def won(guessed):
 
 
 def play_graphics(secret_word):
-    pass
+    guessed = []
+    guesses = 6
+    guess = ''
+    hidden = make_hidden_secret(secret_word, guessed)
+    while not won(hidden):
+        print("already guessed:", guessed)
+        print("guesses remaining:", guesses)
+        print(hidden)
+        guess = input("guess a letter: ")
+        if not already_guessed(guess, guessed):
+            if letter_in_secret_word(guess, secret_word):
+                guessed.append(guess)
+                hidden = make_hidden_secret(secret_word, guessed)
+            else:
+                guessed.append(guess)
+
 
 
 def play_command_line(secret_word):
