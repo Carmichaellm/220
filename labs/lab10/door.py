@@ -1,45 +1,45 @@
 from graphics import Rectangle, Text, GraphWin, Point
 
 class Door:
-    def __init__(self, shape, label):
+    def __init__(self, shape, text):
         self.shape = shape
-        self.label = Text(shape.getCenter(), label)
+        self.text = text
         self.secret = False
 
     def get_label(self):
-        return self.label
+        return self.text.getText()
 
-    def set_label(self, label):
-        self.label = label
+    def set_label(self, text):
+        self.text.setText(text)
 
     def draw(self, win):
         self.shape.draw(win)
-        self.label.draw(win)
+        self.text.draw(win)
 
     def undraw(self):
         self.shape.undraw()
-        self.label.undraw()
+        self.text.undraw()
 
     def is_clicked(self, point):
         x1 = self.shape.getP1().getX()
         y1 = self.shape.getP1().getY()
-        x2 = self.shape.getP1().getX()
-        y2 = self.shape.getP1().getY()
+        x2 = self.shape.getP2().getX()
+        y2 = self.shape.getP2().getY()
         xp = point.getX()
-        yp = point.getX()
+        yp = point.getY()
         if (x1 <= xp <= x2) and (y1 <= yp <= y2):
             return True
         if (x2 <= xp <= x1) and (y2 <= yp <= y1):
             return True
         return False
 
-    def open(self, color, label):
+    def open(self, color, text):
         self.shape.setFill(color)
-        self.label = label
+        self.text.setText(text)
 
-    def close(self, color, label):
+    def close(self, color, text):
         self.shape.setFill(color)
-        self.label = label
+        self.text.setText(text)
 
     def color_door(self, color):
         self.shape.setFill(color)

@@ -13,20 +13,30 @@ from graphics import Rectangle, Text, GraphWin, Point
 
 def main():
     win = GraphWin('test',600,600)
-    door = Door(Rectangle(Point(200,200),Point(400,600)),'closed')
+    door_rect = Rectangle(Point(200,200),Point(400,600))
+    door_text = Text(door_rect.getCenter(), 'closed')
+    door = Door(door_rect,door_text)
     door.color_door('red')
     door.draw(win)
-    button = Button(Rectangle(Point(200,50),Point(400,150)),'exit')
+    butt_rect = Rectangle(Point(200,50),Point(400,150))
+    butt_text = Text(butt_rect.getCenter(), 'exit')
+    button = Button(butt_rect,butt_text)
     button.draw(win)
-    click = win.getMouse()
-    while not button.is_clicked(click):
-        door.open('white', 'open')
-        if door.is_clicked(click):
-            if door.get_label() == 'closed':
-                door.open('white','open')
-            if door.get_label() == 'open':
-                door.close('red','closed')
+    #click = win.getMouse()
+    while True:
         click = win.getMouse()
-        button.is_clicked(click)
+        #door.open('white', 'open')
+        # if door.is_clicked(click):
+        #     if door.get_label() == 'closed':
+        #         door.open('white','open')
+        #     if door.get_label() == 'open':
+        #         door.close('red','closed')
+        if door.is_clicked(click) and door.get_label() == 'closed':
+            door.open('white', 'open')
+        if door.is_clicked(click) and door.get_label() == 'open':
+            door.close('red','closed')
+        if button.is_clicked(click):
+            win.close()
+
 
 main()
