@@ -1,4 +1,4 @@
-from graphics import Circle, Line
+from graphics import Circle, Line, Polygon
 
 
 class Face:
@@ -24,10 +24,23 @@ class Face:
         self.mouth.draw(window)
 
     def smile(self):
-        pass
+        self.mouth.undraw()
+        triangle = Polygon(self.mouth.getP1(), self.mouth.getP2(), self.mouth.getCenter())
+        triangle.draw(self.window)
 
     def shock(self):
-        pass
+        self.mouth.undraw()
+        new_mouth = Circle(self.mouth.getCenter(), self.right_eye.getRadius())
+        new_mouth.draw(self.window)
 
     def wink(self):
-        pass
+        self.mouth.undraw()
+        triangle = Polygon(self.mouth.getP1(), self.mouth.getP2(), self.mouth.getCenter())
+        triangle.draw(self.window)
+        self.right_eye.undraw() #my right or his right?
+        nep1 = self.right_eye.getCenter()
+        nep1.move(-self.right_eye.getRadius(), 0)
+        nep2 = self.right_eye.getCenter()
+        nep2.move(self.right_eye.getRadius())
+        new_eye = Line(nep1, nep2)
+        new_eye.draw(self.window)
