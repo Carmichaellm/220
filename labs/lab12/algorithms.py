@@ -2,7 +2,7 @@
 Name: Liam Carmichael
 algorithms.py
 
-Problem:
+Problem: read numbers from a text file and output a list
 
 Certification of Authenticity:
 I certify that this assignment is entirely my own work.

@@ -1,6 +1,6 @@
 """
 Name: Liam Carmichael
-lab10.py
+lab12.py
 
 Problem: Perform list exercises without using for loops
 
