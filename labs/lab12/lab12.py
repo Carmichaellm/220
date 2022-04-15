@@ -2,7 +2,7 @@
 Name: Liam Carmichael
 lab10.py
 
-Problem:
+Problem: Perform list exercises without using for loops
 
 Certification of Authenticity:
 I certify that this assignment is entirely my own work.
